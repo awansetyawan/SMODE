@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "994591466792",
+    "project_id": "smode-4dacc",
+    "storage_bucket": "smode-4dacc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994591466792:android:c4b740dec5c82bff521c1d",
+        "android_client_info": {
+          "package_name": "com.example.smode"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        
+        {
+          "current_key": "AIzaSyDsQAcIucTGdIaOJ6bNsfkFTot-7od6Ad8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
