@@ -1,0 +1,5 @@
+Catatan :
+1. Proses komunikasi pengujian dilakukan dengan mengikuti alur kerja prototipe Smart Motorcycle Detector 
+   sebanyak 20 kali percobaan yang dimana masing-masing percobaan dilakukan selama ±1 menit. 
+2. Data Diambil Pada Hari Sabtu Tanggal 08-03-2025
+3. Data Diambil Menyesuaikan Topologi, Dengan Posisi Sebagai Aplikasi

@@ -1,0 +1,1 @@
+data diambil selama 1 menit kurang lebih 20 pesan publish 20 receive

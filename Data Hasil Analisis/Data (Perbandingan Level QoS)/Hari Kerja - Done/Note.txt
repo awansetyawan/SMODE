@@ -1,0 +1,5 @@
+Catatan :
+1. Perbedaan performa diperoleh dari rata-rata hasil percobaan yang dilakukan sebanyak lima kali selama ± 1 menit. 
+   Setiap percobaan melibatkan pengiriman 20 pesan dan penerimaan 20 pesan pada setiap level QoS.
+2. Data Diambil Pada Hari Selasa Tanggal 04-03-2025
+3. Data Diambil Menyesuaikan Topologi, Dengan Posisi Sebagai Aplikasi
