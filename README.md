@@ -11,7 +11,7 @@
 
 Proyek ini merupakan hasil penelitian skripsi yang bertujuan untuk **merancang dan membangun sistem Smart Motorcycle Detector** berbasis **Internet of Things (IoT)** menggunakan **protokol MQTT**.  
 
-Sistem ini mampu **identifikasi pengguna motor melalui Bluetooth Low Energy (BLE)**, **mendeteksi gerakan atau gerakan kendaraan**, dan **memutus aliran listrik motor dari aplikasi**.  
+Sistem ini mampu **identifikasi pengguna motor melalui Bluetooth Low Energy (BLE)**, **mendeteksi gerakan atau getaran kendaraan**, dan **memutus aliran listrik motor dari aplikasi**.  
 
 ---
 
