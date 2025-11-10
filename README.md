@@ -1,4 +1,4 @@
-# 🏍️ IMPLEMENTASI PROTOKOL MESSAGE QUEUING TELEMETRY TRANSPORT (MQTT) SEBAGAI MEDIA KOMUNIKASI PROTOTIPE SMART MOTORCYCLE DETECTOR
+# 🛵 IMPLEMENTASI PROTOKOL MESSAGE QUEUING TELEMETRY TRANSPORT (MQTT) SEBAGAI MEDIA KOMUNIKASI PROTOTIPE SMART MOTORCYCLE DETECTOR
 
 **Penulis :** Alif Maulana Setyawan  
 **NIM :** 2109106002  
@@ -64,56 +64,58 @@ Sistem ini mampu **identifikasi pengguna motor melalui Bluetooth Low Energy (BLE
 
 ## 🚀 Cara Instalasi
 
-### 1. Install & Jalankan Broker MQTT (EMQX)
+### 1. Install & Jalankan Broker/Server MQTT (EMQX)
+
+> Untuk Broker/Server Install dan Jalankan pada Sistem Operasi Ubuntu 20.04.6 LTS
 
 1) Update sistem
    
-```bash
-sudo apt update && sudo apt upgrade -y
-```
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   ```
 
 2) Download EMQX
 
-```bash
-wget https://www.emqx.com/en/downloads/enterprise/5.10.1/emqx-enterprise-5.10.1-ubuntu20.04-amd64.deb
-
-sudo apt install ./emqx-enterprise-5.10.1-ubuntu20.04-amd64.deb
-```
+   ```bash
+   wget https://www.emqx.com/en/downloads/enterprise/5.10.1/emqx-enterprise-5.10.1-ubuntu20.04-amd64.deb
+   
+   sudo apt install ./emqx-enterprise-5.10.1-ubuntu20.04-amd64.deb
+   ```
 
 3) Jalankan EMQX
 
-```bash
-sudo systemctl start emqx
-
-sudo systemctl status emqx
-```
+   ```bash
+   sudo systemctl start emqx
+   
+   sudo systemctl status emqx
+   ```
 
 4) Konfigurasi file emqx.conf
 
-```bash
-sudo nano /etc/emqx/emqx.conf
-
-sesuaikan bagian - name = "emqx@ipaddressbroker"
-
-Simpan dan keluar.
-
-sudo systemctl restart emqx
-
-sudo systemctl status emqx
-```
+   ```bash
+   sudo nano /etc/emqx/emqx.conf
+   
+   sesuaikan bagian - name = "emqx@ipaddressbroker"
+   
+   Simpan dan keluar.
+   
+   sudo systemctl restart emqx
+   
+   sudo systemctl status emqx
+   ```
 
 5) Akses Dashboard EMQX
 
-```bash
-Buka browser dan akses:
-
-http://ipaddressbroker:18083
-
-Login default:
-
-Username: admin
-Password: public
-```
+   ```bash
+   Buka browser dan akses:
+   
+   http://ipaddressbroker:18083
+   
+   Login default:
+   
+   Username: admin
+   Password: public
+   ```
 
 ### 2. Clone Repository
 
@@ -160,13 +162,14 @@ php SMODE/Aplikasi SMODE/smode_backend-main/smode.php
 ### 5. Jalankan Aplikasi
 
 1) Konfigurasi File Shared Value
-```bash
-Aplikasi SMODE/smode/lib/shared/shared_values.dart
-
-sesuaikan bagian - String baseUrl = 'http://ipaddressbackend:8000/api';
-```
-2) Start Debugging
-3) Tampilan Aplikasi
+   
+   ```bash
+   Aplikasi SMODE/smode/lib/shared/shared_values.dart
+   
+   sesuaikan bagian - String baseUrl = 'http://ipaddressbackend:8000/api';
+   ```
+3) Start Debugging
+4) Tampilan Aplikasi
 
 <img src="./Gambar/Tampilan Aplikasi Smart Motorcycle Detector.png" alt="Tampilan Aplikasi" width="50%">
 
@@ -174,15 +177,15 @@ sesuaikan bagian - String baseUrl = 'http://ipaddressbackend:8000/api';
 
 1) Sesuaikan konfigurasi jaringan dan broker:
 
-```bash
-const char* ssid = "NamaWiFi";
-const char* password = "PasswordWiFi";
-const char* mqtt_broker = "IPBroker";  // IP broker EMQX
-const char* topic = "topic/"; // Topic Broker
-const char *mqtt_username = "UsernameBroker"; // Authentication EMQX
-const char *mqtt_password = "PasswordBroker"; // Authentication EMQX
-const int mqtt_port = 1883; // Port Broker
-```
+   ```bash
+   const char* ssid = "NamaWiFi";
+   const char* password = "PasswordWiFi";
+   const char* mqtt_broker = "IPBroker";  // IP broker EMQX
+   const char* topic = "topic/"; // Topic Broker
+   const char *mqtt_username = "UsernameBroker"; // Authentication EMQX
+   const char *mqtt_password = "PasswordBroker"; // Authentication EMQX
+   const int mqtt_port = 1883; // Port Broker
+   ```
 
 2) Upload ke board ESP32.
 
