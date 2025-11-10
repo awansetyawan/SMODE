@@ -40,6 +40,7 @@ Sistem ini mampu **identifikasi pengguna motor melalui Bluetooth Low Energy (BLE
 <img src="./Gambar/Topologi Jaringan.png" alt="Topologi Jaringan" width="50%">
 
 > Topologi sistem Smart Motorcycle Detector menggambarkan hubungan antara hardware, broker/server, backend, dan software dalam satu jaringan lokal.
+
 > Broker MQTT, backend aplikasi, dan aplikasi berjalan pada jaringan router yang terhubung dengan Internet Service Provider (ISP), sedangkan NodeMCU ESP32 terhubung langsung ke jaringan ISP.
 
 ---
@@ -73,9 +74,9 @@ sudo apt update && sudo apt upgrade -y
 2) Tambahkan repository EMQX
 
 ```bash
-wget https://www.emqx.com/en/downloads/broker/5.0.26/emqx-5.0.26-ubuntu22.04-amd64.deb
+wget https://www.emqx.com/en/downloads/enterprise/5.10.1/emqx-enterprise-5.10.1-ubuntu20.04-amd64.deb
 
-sudo dpkg -i emqx-5.0.26-ubuntu22.04-amd64.deb
+sudo apt install ./emqx-enterprise-5.10.1-ubuntu20.04-amd64.deb
 ```
 
 3) Jalankan EMQX
@@ -86,7 +87,21 @@ sudo systemctl start emqx
 sudo systemctl status emqx
 ```
 
-4) Akses Dashboard EMQX
+4) Konfigurasi emqx.conf
+
+```bash
+sudo nano /etc/emqx/emqx.conf
+
+sesuaikan bagian - name = "emqx@ipaddressbroker"
+
+Simpan dan keluar.
+
+sudo systemctl restart emqx
+
+sudo systemctl status emqx
+```
+
+5) Akses Dashboard EMQX
 
 ```bash
 Buka browser dan akses:
@@ -134,7 +149,19 @@ php artisan key:generate
 
 php artisan migrate
 
-php artisan serve "IP Address Backend"
+php artisan serve --host "IP Address Backend"
+
+php SMODE/Aplikasi SMODE/smode_backend-main/smode.php
 ```
 
 > Pastikan konfigurasi .env telah disesuaikan dengan database dan alamat broker MQTT.
+
+### 5. Jalankan Aplikasi
+
+1) Konfigurasi File Shared Value
+```bash
+Aplikasi SMODE/smode/lib/shared/shared_values.dart
+
+sesuaikan bagian - String baseUrl = 'http://ipaddressbackend:8000/api';
+```
+2) Start Debugging
