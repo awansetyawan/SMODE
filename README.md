@@ -47,17 +47,18 @@ Sistem ini mampu **identifikasi pengguna motor melalui Bluetooth Low Energy (BLE
 
 ## 🧩 Komponen
 
-| Komponen | Deskripsi |
-|-----------|-----------|
-| Mikrokontroler | ESP32 |
-| Sensor | MPU-6050 |
-| Aktuator | Relay 1 Channel & Buzzer |
-| Komunikasi | MQTT |
-| Broker | EMQX |
-| Backend | Laravel (PHP) |
-| Database | MySQL (XAMPP) |
-| Aplikasi Mobile | Flutter (Dart) |
-| Analisis | Wireshark (Throughput, Delay, & Packet Loss) |
+| Komponen        | Deskripsi                                         |
+| ---------------- | ------------------------------------------------ |
+| Mikrokontroler   | ESP32                                            |
+| Sensor           | MPU-6050 (Accelerometer & Gyroscope)             |
+| Aktuator         | Relay 1 Channel & Buzzer                         |
+| Komunikasi       | MQTT QoS Level 1                                 |
+| Broker           | EMQX                                             |
+| Backend          | Laravel (PHP)                                    |
+| Database         | MySQL (XAMPP)                                    |
+| Aplikasi Mobile  | Flutter (Dart)                                   |
+| Notifikasi       | Firebase Cloud Messaging (FCM)                   |
+| Analisis         | Wireshark (Throughput, Delay, & Packet Loss)     |
 
 ---
 
