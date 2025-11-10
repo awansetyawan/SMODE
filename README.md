@@ -31,7 +31,7 @@ Sistem ini mampu **identifikasi pengguna motor melalui Bluetooth Low Energy (BLE
 | Bluetooth (BLE) | Internal ESP32 |
 | Daya | 3,3V / GND |
 
-<img src="./Gambar/Skema Pin Smart Motorcycle Detector.png" alt="Skema Pin SMODE" width="50%">
+<img src="./Gambar/Skema Pin Smart Motorcycle Detector.png" alt="Skema Pin SMODE" width="40%">
 
 ---
 
@@ -51,7 +51,7 @@ Sistem ini mampu **identifikasi pengguna motor melalui Bluetooth Low Energy (BLE
 |-----------|-----------|
 | Mikrokontroler | ESP32 |
 | Sensor | MPU-6050 |
-| Aktuator | Relay 1 Channel |
+| Aktuator | Relay 1 Channel & Buzzer |
 | Komunikasi | MQTT |
 | Broker | EMQX |
 | Backend | Laravel (PHP) |
@@ -71,7 +71,7 @@ Sistem ini mampu **identifikasi pengguna motor melalui Bluetooth Low Energy (BLE
 sudo apt update && sudo apt upgrade -y
 ```
 
-2) Tambahkan repository EMQX
+2) Download EMQX
 
 ```bash
 wget https://www.emqx.com/en/downloads/enterprise/5.10.1/emqx-enterprise-5.10.1-ubuntu20.04-amd64.deb
@@ -87,7 +87,7 @@ sudo systemctl start emqx
 sudo systemctl status emqx
 ```
 
-4) Konfigurasi emqx.conf
+4) Konfigurasi file emqx.conf
 
 ```bash
 sudo nano /etc/emqx/emqx.conf
@@ -165,3 +165,57 @@ Aplikasi SMODE/smode/lib/shared/shared_values.dart
 sesuaikan bagian - String baseUrl = 'http://ipaddressbackend:8000/api';
 ```
 2) Start Debugging
+3) Tampilan Aplikasi
+
+<img src="./Gambar/Tampilan Aplikasi Smart Motorcycle Detector.png" alt="Tampilan Aplikasi" width="50%">
+
+### 6. Upload Code ke ESP32
+
+1) Sesuaikan konfigurasi jaringan dan broker:
+
+```bash
+const char* ssid = "NamaWiFi";
+const char* password = "PasswordWiFi";
+const char* mqtt_broker = "IPBroker";  // IP broker EMQX
+const char* topic = "topic/"; // Topic Broker
+const char *mqtt_username = "UsernameBroker"; // Authentication EMQX
+const char *mqtt_password = "PasswordBroker"; // Authentication EMQX
+const int mqtt_port = 1883; // Port Broker
+```
+
+2) Upload ke board ESP32.
+
+## 📂 Struktur Folder
+
+```
+/smart-motorcycle-detector
+│
+├─ /Aplikasi SMODE        # Source Code Frontend & Backend Software
+├─ /Database              # File Database
+├─ /Prototipe SMODE       # Source Code Hardware
+├─ /Gambar                # Rangkaian, Skema Pin, Tampilan Aplikasi, & Topologi
+├─ /Data Hasil Analisis   # Hasil Data
+└─ README.md
+```
+
+---
+
+## 🧾 Kesimpulan
+
+* Implementasi protokol MQTT QoS Level 1 pada prototipe Smart Motorcycle Detector (SMODE) berhasil menunjukkan komunikasi yang andal dan efisien antara perangkat IoT dan aplikasi.
+* Pengujian menunjukkan bahwa MQTT dapat beroperasi dengan baik pada jaringan lokal, meskipun terdapat variasi throughput dan delay antara hari kerja dan hari libur.   
+  a) Throughput tertinggi mencapai 68.38 Kbps pada hari kerja, menunjukkan kinerja jaringan yang lebih optimal saat aktivitas tinggi.   
+  b) Delay terendah tercatat 43.01 ms, dengan rata-rata 57.33 ms (hari kerja) dan 64.40 ms (hari libur) — keduanya termasuk kategori “Sangat Bagus” menurut standar ITU-T Y.1541.   
+  c) Packet loss 0% pada seluruh pengujian juga menegaskan keandalan komunikasi MQTT.   
+* Secara keseluruhan, sistem ini membuktikan bahwa MQTT QoS Level 1 dapat digunakan secara efektif untuk komunikasi real-time pada arsitektur IoT lokal seperti SMODE.
+
+---
+
+## ✉️ Kontak
+
+**Alif Maulana Setyawan**   
+📧 [alifmaulanasetyawan@gmail.com](mailto:alifmaulanasetyawan@gmail.com)   
+🌐 [github.com/awansetyawan](https://github.com/awansetyawan)   
+📍 Samarinda, Kalimantan Timur   
+
+---
