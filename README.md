@@ -181,7 +181,7 @@ php SMODE/Aplikasi SMODE/smode_backend-main/smode.php
    const char* ssid = "NamaWiFi";
    const char* password = "PasswordWiFi";
    const char* mqtt_broker = "IPBroker";  // IP broker EMQX
-   const char* topic = "topic/"; // Topic Broker
+   const char* topic = "Topic/"; // Topic Broker
    const char *mqtt_username = "UsernameBroker"; // Authentication EMQX
    const char *mqtt_password = "PasswordBroker"; // Authentication EMQX
    const int mqtt_port = 1883; // Port Broker
