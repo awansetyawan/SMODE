@@ -3,7 +3,7 @@
 **Penulis :** Alif Maulana Setyawan  
 **NIM :** 2109106002  
 **Program Studi :** Informatika, Fakultas Teknik  
-**Universitas Mulawarman – 2025**
+**Universitas Mulawarman – 2021**
 
 ---
 
